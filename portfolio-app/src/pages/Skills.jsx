@@ -2,10 +2,10 @@
 
 function Skills() {
   return (
-    <section className=" text-black">
+    <section className=" text-black flex items-center justify-center">
     <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
       <div className="max-w-xl">
-        <h2 className="text-3xl font-bold sm:text-4xl">What makes me <span className=" py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent">special</span></h2>
+        <h2 className="text-3xl font-bold sm:text-4xl">What makes me <span className=" py-2 px-3 md:p-0 text-indigo-700 rounded md:bg-transparent md:dark:bg-transparent">special</span></h2>
   
         <p className="mt-4 text-gray-600">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam

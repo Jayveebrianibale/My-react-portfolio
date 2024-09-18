@@ -8,7 +8,7 @@ function Navbar() {
   };
 
   return (
-    <nav className=" bg-gray-100 dark:bg-gray-800 dark:border-gray-700">
+    <nav>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={Logo} className="h-10" alt="Flowbite Logo" />
