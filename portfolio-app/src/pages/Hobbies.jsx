@@ -104,6 +104,9 @@ function Hobbies() {
       </a>
     </div>
   </div>
+  <div className="flex justify-center items-center h-20 border-gray-300">
+      <div className="w-[80%] border-b border-gray-400"></div>
+  </div>
 </section>
   )
 }

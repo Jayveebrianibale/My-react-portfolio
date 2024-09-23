@@ -1,215 +1,80 @@
-
+import Kind from '../assets/Kind.jpg';
+import Friend from '../assets/Friend.jpeg';
+import Socialize from '../assets/Socialize.jpg';
+import Eagerness from '../assets/Eagerness.jpg';
+import Workaholic from '../assets/Workaholic.jpeg';
+import Pressure from '../assets/Pressure.jpg';
 
 function Skills() {
   return (
-    <section className=" text-black flex items-center justify-center">
-    <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
-      <div className="max-w-xl">
-        <h2 className="text-3xl font-bold sm:text-4xl">What makes me <span className=" py-2 px-3 md:p-0 text-indigo-700 rounded md:bg-transparent md:dark:bg-transparent">special</span></h2>
-  
-        <p className="mt-4 text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam
-          iste obcaecati. Consequatur ipsa quod ipsum sequi culpa delectus, cumque id tenetur
-          quibusdam, quos fuga minima.
-        </p>
-      </div>
-  
-      <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
-          </div>
+    <section className="text-black">
+      <div className="max-w-screen-xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="max-w-xl">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            What makes me <span className="py-2 px-3 md:p-0 text-indigo-700 rounded md:bg-transparent md:dark:bg-transparent">special</span>?
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dolores iure fugit totam
+            iste obcaecati. Consequatur ipsa quod ipsum sequi culpa delectus, cumque id tenetur
+            quibusdam, quos fuga minima.
+          </p>
         </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
+        <div className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Optimistic and Kind</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Kind} alt="Optimistic and Kind" />
+            </div>
           </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Friendly</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Friend} alt="Friendly" />
+            </div>
           </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Sociable</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Socialize} alt="Sociable" />
+            </div>
           </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Eagerness to Learn</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Eagerness} alt="Eagerness to Learn" />
+            </div>
           </div>
-        </div>
-  
-        <div className="flex items-start gap-4">
-          <span className="shrink-0 rounded-lg bg-gray-800 p-4">
-            <svg
-              className="size-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
-              <path
-                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-              ></path>
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-              ></path>
-            </svg>
-          </span>
-  
-          <div>
-            <h2 className="text-lg font-bold">Lorem, ipsum dolor.</h2>
-  
-            <p className="mt-1 text-sm text-gray-600">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error cumque tempore est ab
-              possimus quisquam reiciendis tempora animi! Quaerat, saepe?
-            </p>
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Workaholic</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Workaholic} alt="Workaholic" />
+            </div>
+          </div>
+          <div className="group flex flex-col items-start gap-4">
+            <div>
+              <h2 className="text-2xl text-center font-bold">Work Under Pressure</h2>
+            </div>
+            <div>
+              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={Pressure} alt="Work Under Pressure" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  )
+      <div className="flex justify-center items-center mt-8">
+        <div className="w-[80%] border-b border-gray-400"></div>
+      </div>
+    </section>
+  );
 }
 
-export default Skills
+export default Skills;

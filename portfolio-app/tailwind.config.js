@@ -1,4 +1,3 @@
-// tailwind.config.js
 
 export const content = [
   "./index.html",
@@ -6,7 +5,22 @@ export const content = [
   "./node_modules/flowbite/**/*.js"
 ];
 export const theme = {
-  extend: {},
+  extend: {
+    scrollBehavior: ['responsive'],
+    keyframes: {
+      'scale-up': {
+        '0%': { transform: 'scale(1)', opacity: '1' },
+        '100%': { transform: 'scale(1.1)', opacity: '0.9' },
+      },
+    },
+    animation: {
+      'scale-up': 'scale-up 0.3s ease-in-out',
+    },
+  },
+  // Include the safelist inside the theme object
+  safelist: [
+    'animate-[scale-up_0.3s_ease-in-out]'
+  ]
 };
 export const plugins = [
   // eslint-disable-next-line no-undef

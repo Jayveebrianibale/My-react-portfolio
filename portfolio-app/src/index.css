@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 @import 'flowbite';
+
+html {
+    scroll-behavior: smooth;
+}

@@ -1,4 +1,9 @@
 import Home from "./pages/home";
+import Navbar from '../src/components/Navbar';
+import Skills from '../src/pages/Skills';
+import Hobbies from '../src/pages/Hobbies'; // Import your Hobbies component
+import Technology from '../src/pages/Technology'; // Import your Technology component
+import Contacts from '../src/pages/Contact'; 
 
 
 function App() {
@@ -7,7 +12,7 @@ function App() {
     <div>
       {/* <Navbar/>
       <Intro/> */}
-      <Home/>
+      {/* <Home/> */}
       {/* Add your routes here */}
       {/* <Route exact path="/" component={Home} /> */}
       {/* <Route exact path="/about" component={About} /> */}
@@ -21,6 +26,25 @@ function App() {
       {/* <Route exact path="/faq" component={FAQ} /> */}
       {/* <Route exact path="/terms" component={Terms} /> */}
       {/* <Route exact path="/privacy" component={Privacy} /> */}
+
+      <div className="scroll-smooth">
+      <Navbar />
+      <div id="home">
+        <Home />
+      </div>
+      <div id="hobbies">
+        <Hobbies />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="technology">
+        <Technology />
+      </div>
+      <div id="contacts">
+        <Contacts />
+      </div>
+    </div>
     
     </div>
     </>
