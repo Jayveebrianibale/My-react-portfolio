@@ -1,12 +1,12 @@
-import Intro from "../components/Intro"
-function home() {
+import Intro from "../components/Intro";
+
+function Home() {
   return (
     <div>
-     <Intro/>
-    
+      <Intro />
     </div>
-  )
+  );
 }
 
+export default Home;
 
-export default home
