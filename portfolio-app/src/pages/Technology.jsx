@@ -5,22 +5,26 @@ import Html from '../assets/Html.jpg';
 import Css from '../assets/Css.png';
 import Tailwind from '../assets/Tailwind.jpg';
 import React from '../assets/React.webp';
+import Javascript from '../assets/Javascript.jpg';
+import Php from '../assets/Php.jpg';
+import Laravel from '../assets/Laravel.png'
+import Python from '../assets/Python.png';
 
 function Technology() {
   const ref = useRef();
   const isInView = useInView(ref);
 
-  const itemsPerPage = 4; // Updated to show 4 items per page
+  const itemsPerPage = 4;
   const [currentPage, setCurrentPage] = useState(1);
   const items = [
     { img: Html, title: "HTML" },
     { img: Css, title: "CSS" },
     { img: Tailwind, title: "Tailwind CSS" },
     { img: React, title: "React JS" },
-    { img: Html, title: "HTML" },
-    { img: Css, title: "CSS" },
-    { img: Tailwind, title: "Tailwind CSS" },
-    { img: React, title: "React JS" }
+    { img: Javascript, title: "Javacript" },
+    { img: Php, title: "PHP" },
+    { img: Laravel, title: "Laravel" },
+    { img: Python, title: "Python" }
   ];
   
   const totalPages = Math.ceil(items.length / itemsPerPage);

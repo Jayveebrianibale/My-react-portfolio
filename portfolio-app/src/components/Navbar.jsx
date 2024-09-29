@@ -53,7 +53,7 @@ function Navbar() {
                 onClick={toggleDarkMode}
                 className="flex items-center mt-1 py-2 px-3 md:p-0 text-gray-900 dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent"
               >
-                {isDarkMode ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
+                {isDarkMode ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
                 <span className="ml-2">{isDarkMode}</span>
               </button>
             </li>
