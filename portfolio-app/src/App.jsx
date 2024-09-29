@@ -1,8 +1,8 @@
 import Home from "./pages/home";
 import Navbar from '../src/components/Navbar';
 import Skills from '../src/pages/Skills';
-import Hobbies from '../src/pages/Hobbies'; // Import your Hobbies component
-import Technology from '../src/pages/Technology'; // Import your Technology component
+import Hobbies from '../src/pages/Hobbies'; 
+import Technology from '../src/pages/Technology';
 import Contacts from '../src/pages/Contact'; 
 
 
