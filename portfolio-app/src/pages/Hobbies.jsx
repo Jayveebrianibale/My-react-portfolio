@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import useInView from '../components/useInView'; // Ensure this hook is correctly imported
 import Basket from '../assets/Basket.jpg';
 import Music from '../assets/Music.jpg';
 import Skies from '../assets/Skies.jpg';
@@ -6,8 +9,11 @@ import Hikes from '../assets/Hikes.jpg';
 import Movies from '../assets/Movies.jpg';
 
 function Hobbies() {
+  const ref = useRef();
+  const isInView = useInView(ref);
+
   return (
-    <section className="bg-white dark:bg-gray-900 text-black dark:text-white">
+    <section ref={ref} className="bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">Quickstart with my Hobbies</h2>
@@ -27,10 +33,13 @@ function Hobbies() {
             { img: Hikes, title: "Hiking" },
             { img: Movies, title: "Watching Movies" }
           ].map((hobby, index) => (
-            <a
+            <motion.a
               key={index}
               className="block rounded-xl border border-gray-800 dark:border-gray-600 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
               href="#"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.9 }}
+              transition={{ duration: 0.5, delay: index * 0}}
             >
               <img className='rounded-xl' src={hobby.img} alt={hobby.title} />
 
@@ -40,7 +49,7 @@ function Hobbies() {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci
                 distinctio alias voluptatum blanditiis laudantium.
               </p>
-            </a>
+            </motion.a>
           ))}
         </div>
       </div>

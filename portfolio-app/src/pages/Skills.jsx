@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import useInView from '../components/useInView';
 import Kind from '../assets/Kind.jpg';
 import Friend from '../assets/Friend.jpeg';
 import Socialize from '../assets/Socialize.jpg';
@@ -6,8 +9,11 @@ import Workaholic from '../assets/Workaholic.jpeg';
 import Pressure from '../assets/Pressure.jpg';
 
 function Skills() {
+  const ref = useRef();
+  const isInView = useInView(ref);
+
   return (
-    <section className="bg-white dark:bg-gray-900 text-black dark:text-white">
+    <section ref={ref} className="bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="max-w-screen-xl mx-auto px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="max-w-xl">
           <h2 className="text-3xl font-bold sm:text-4xl">
@@ -28,10 +34,23 @@ function Skills() {
             { img: Workaholic, title: "Workaholic" },
             { img: Pressure, title: "Work Under Pressure" }
           ].map((skill, index) => (
-            <div key={index} className="group flex flex-col items-start gap-4">
+            <motion.div
+              key={index}
+              className="group flex flex-col items-start gap-4"
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }} 
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <h2 className="text-2xl text-center font-bold">{skill.title}</h2>
-              <img className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]" src={skill.img} alt={skill.title} />
-            </div>
+              <motion.img
+                className="rounded-xl mt-5 group-hover:animate-[scale-up_0.3s_ease-in-out]"
+                src={skill.img}
+                alt={skill.title}
+                initial={{ scale: 0.9 }}
+                animate={{ scale: isInView ? 1 : 1 }} 
+                transition={{ duration: 0.5 }}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

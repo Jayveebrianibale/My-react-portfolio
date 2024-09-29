@@ -1,11 +1,46 @@
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import useInView from '../components/useInView'; 
 import Html from '../assets/Html.jpg';
 import Css from '../assets/Css.png';
 import Tailwind from '../assets/Tailwind.jpg';
 import React from '../assets/React.webp';
 
 function Technology() {
+  const ref = useRef();
+  const isInView = useInView(ref);
+
+  const itemsPerPage = 4; // Updated to show 4 items per page
+  const [currentPage, setCurrentPage] = useState(1);
+  const items = [
+    { img: Html, title: "HTML" },
+    { img: Css, title: "CSS" },
+    { img: Tailwind, title: "Tailwind CSS" },
+    { img: React, title: "React JS" },
+    { img: Html, title: "HTML" },
+    { img: Css, title: "CSS" },
+    { img: Tailwind, title: "Tailwind CSS" },
+    { img: React, title: "React JS" }
+  ];
+  
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentItems = items.slice(startIndex, startIndex + itemsPerPage);
+
+  const nextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
   return (
-    <section className="bg-white dark:bg-gray-900 text-black dark:text-white">
+    <section ref={ref} className="bg-white dark:bg-gray-900 text-black dark:text-white">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header>
           <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 sm:text-3xl">
@@ -19,18 +54,22 @@ function Technology() {
 
         <div className="mt-8">
           <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { img: Html, title: "HTML" },
-              { img: Css, title: "CSS" },
-              { img: Tailwind, title: "Tailwind CSS" },
-              { img: React, title: "React JS" }
-            ].map((tech, index) => (
+            {currentItems.map((tech, index) => (
               <li key={index}>
-                <a href="#" className="group block overflow-hidden">
-                  <img
+                <motion.a 
+                  href="#" 
+                  className="group block overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <motion.img
                     src={tech.img}
                     alt={tech.title}
                     className="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+                    initial={{ scale: 0.9 }}
+                    animate={{ scale: isInView ? 1 : 0.9 }}
+                    transition={{ duration: 0.3 }}
                   />
                   <div className="relative bg-white dark:bg-gray-800 pt-3">
                     <p className="mt-2 text-center">
@@ -40,7 +79,7 @@ function Technology() {
                       </span>
                     </p>
                   </div>
-                </a>
+                </motion.a>
               </li>
             ))}
           </ul>
@@ -48,65 +87,40 @@ function Technology() {
 
         <ol className="mt-8 flex justify-center gap-1 text-xs font-medium">
           <li>
-            <a
-              href="#"
+            <button
+              onClick={prevPage}
+              disabled={currentPage === 1}
               className="inline-flex size-8 items-center justify-center rounded border border-gray-100 dark:border-gray-700"
             >
               <span className="sr-only">Prev Page</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-3"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                  clipRule="evenodd"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" className="size-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-            </a>
+            </button>
           </li>
 
-          <li>
-            <a href="#" className="block size-8 rounded border border-gray-100 dark:border-gray-700 text-center leading-8">
-              1
-            </a>
-          </li>
-
-          <li className="block size-8 rounded border-black bg-black text-center leading-8 text-white">2</li>
-
-          <li>
-            <a href="#" className="block size-8 rounded border border-gray-100 dark:border-gray-700 text-center leading-8">
-              3
-            </a>
-          </li>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <li key={i}>
+              <button
+                onClick={() => setCurrentPage(i + 1)}
+                className={`block size-8 rounded ${currentPage === i + 1 ? 'border-black bg-black text-white' : 'border border-gray-100 dark:border-gray-700 text-center leading-8'}`}
+              >
+                {i + 1}
+              </button>
+            </li>
+          ))}
 
           <li>
-            <a href="#" className="block size-8 rounded border border-gray-100 dark:border-gray-700 text-center leading-8">
-              4
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#"
+            <button
+              onClick={nextPage}
+              disabled={currentPage === totalPages}
               className="inline-flex size-8 items-center justify-center rounded border border-gray-100 dark:border-gray-700"
             >
               <span className="sr-only">Next Page</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="size-3"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clipRule="evenodd"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" className="size-3" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
               </svg>
-            </a>
+            </button>
           </li>
         </ol>
       </div>
