@@ -1,14 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import Beach from '../assets/Beach.jpeg'
-import Student from '../assets/Student.jpeg'
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import useInView from './useInView';
+import Beach from '../assets/Beach.jpeg';
+import Student from '../assets/Student.jpeg';
 
 function Intro() {
+    const ref = useRef();
+    const isInView = useInView(ref);
+
     return (
         <section className="bg-white dark:bg-gray-900 text-black dark:text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-                    <div className="lg:py-24">
+                    <motion.div
+                        className="lg:py-24"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+                        transition={{ duration: 1}}
+                        ref={ref}
+                    >
                         <h2 className="text-3xl font-bold sm:text-4xl">
                             Hello, <span> I'm Jayvee Brian Ibale</span>
                         </h2>
@@ -21,23 +33,29 @@ function Intro() {
 
                         <a
                             href="#"
-                            className="mt-8 inline-block rounded bg-indigo-600 dark:bg-indigo-700 px-12 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 dark:hover:bg-indigo-800 focus:outline-none focus:ring focus:ring-yellow-400"
+                            className="mt-8 inline-block rounded bg-indigo-600 dark:bg-indigo-700 px-12 py-3 text-sm font-medium text-white transition-transform duration-300 hover:scale-105 hover:bg-indigo-700 dark:hover:bg-indigo-800 focus:outline-none focus:ring focus:ring-yellow-400"
                         >
                             Learn More About Me
                         </a>
-                    </div>
+                    </motion.div>
 
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-1 lg:grid-cols-2">
-                        <img
+                        <motion.img
                             alt="Student"
                             src={Student}
                             className="h-40 w-full object-cover sm:h-56 md:h-full"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
+                            transition={{ duration: 1, delay: 0 }}
                         />
 
-                        <img
+                        <motion.img
                             alt="Beach"
                             src={Beach}
                             className="h-40 w-full object-cover sm:h-56 md:h-full"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.8 }}
+                            transition={{ duration: 1, delay: 0 }}
                         />
                     </div>
                 </div>
