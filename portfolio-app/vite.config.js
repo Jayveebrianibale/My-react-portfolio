@@ -2,6 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: 'My-react-porfolio',
+  base: 'my-react-porfolio',
   plugins: [react()],
 });
